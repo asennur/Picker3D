@@ -1,8 +1,13 @@
 using System.Collections.Generic;
+using Data.ValueObject;
 using UnityEngine;
+
 //attributes
-[CreateAssetMenu(fileName = "CD_Level", menuName = "Picker3D/CDLevel")]
-public class CD_Level : ScriptableObject
+namespace Data.UnityObject
 {
-    public List<LevelData> Levels = new List<LevelData>();
+    [CreateAssetMenu(fileName = "CD_Level", menuName = "Picker3D/CDLevel")]
+    public class CD_Level : ScriptableObject
+    {
+        public List<LevelData> Levels = new List<LevelData>();
+    }
 }

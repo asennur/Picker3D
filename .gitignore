@@ -57,4 +57,25 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-
+Picker3D/ProjectSettings/AudioManager.asset
+Picker3D/ProjectSettings/boot.config
+Picker3D/ProjectSettings/ClusterInputManager.asset
+Picker3D/ProjectSettings/DynamicsManager.asset
+Picker3D/ProjectSettings/EditorBuildSettings.asset
+Picker3D/ProjectSettings/EditorSettings.asset
+Picker3D/ProjectSettings/GraphicsSettings.asset
+Picker3D/ProjectSettings/InputManager.asset
+Picker3D/ProjectSettings/MemorySettings.asset
+Picker3D/ProjectSettings/NavMeshAreas.asset
+Picker3D/ProjectSettings/PackageManagerSettings.asset
+Picker3D/ProjectSettings/Physics2DSettings.asset
+Picker3D/ProjectSettings/PresetManager.asset
+Picker3D/ProjectSettings/ProjectSettings.asset
+Picker3D/ProjectSettings/ProjectVersion.txt
+Picker3D/ProjectSettings/QualitySettings.asset
+Picker3D/ProjectSettings/ShaderGraphSettings.asset
+Picker3D/ProjectSettings/TagManager.asset
+Picker3D/ProjectSettings/TimeManager.asset
+Picker3D/ProjectSettings/UnityConnectSettings.asset
+Picker3D/ProjectSettings/URPProjectSettings.asset
+Picker3D/ProjectSettings/VersionControlSettings.asset
