@@ -21,6 +21,7 @@ public class CoreGameSignals : MonoBehaviour
         public UnityAction onClearActiveLevel = delegate {  };
         public UnityAction onLevelFailed= delegate {  };
         public UnityAction onLevelSuccessfull = delegate {  };
+        public UnityAction onPlay = delegate {  };
         public UnityAction onNextLevel = delegate {  };
         public UnityAction onRestartLevel = delegate {  };
         public UnityAction onReset = delegate {  };
