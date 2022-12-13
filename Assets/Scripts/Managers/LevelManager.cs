@@ -1,4 +1,4 @@
-using System;
+using Signals;
 using Commands;
 using Data.UnityObject;
 using UnityEngine;
@@ -35,12 +35,15 @@ namespace Managers
         private void Awake()
         {
             _levelData = GetLevelData();
+            levelID = GetActiveLevel();
+            
             Init();
         }
 
         private void Start()
         {
-            _levelLoaderCommand.Execute(levelID);
+            CoreGameSignals.Instance.onLevelInitialize?.Invoke(levelID);
+            CoreUISignals.Instance.onOpenPanel?.Invoke(Enums.UIPanelTypes.Start, 1);
         }
 
         private void Init()

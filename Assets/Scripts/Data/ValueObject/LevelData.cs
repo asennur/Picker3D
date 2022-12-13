@@ -6,7 +6,11 @@ namespace Data.ValueObject
     [Serializable]
     public class LevelData
     {
-        public List<PoolData> PoolList = new List<PoolData>();
+        public List<PoolData> PoolList;
+        public LevelData(List<PoolData> datas)
+        {
+            PoolList = datas;
+        }
     }
 
     [Serializable]

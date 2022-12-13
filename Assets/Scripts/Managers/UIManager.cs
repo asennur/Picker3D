@@ -1,11 +1,24 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Signals;
 using UnityEngine;
+using Enums;
 
 public class UIManager : MonoBehaviour
 {
+    #region Self Variables
+
+    #region Public Variables
+
+    #endregion
+
+    #region Serialized Variables
+
+    #endregion
+
+    #region Private Variables
+
+    #endregion
+
+    #endregion
     private void OnEnable()
     {
         SubscribeEvents();

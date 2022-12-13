@@ -5,7 +5,7 @@ namespace Commands
 {
     public class OnLevelLoaderCommand : ICommand
     {
-        public Transform _levelHolder;
+        private readonly Transform _levelHolder;
 
         public OnLevelLoaderCommand(Transform levelHolder)
         {
