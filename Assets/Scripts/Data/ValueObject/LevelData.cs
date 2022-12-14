@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Data.ValueObject
 {
     [Serializable]
-    public class LevelData
+    public struct LevelData
     {
         public List<PoolData> PoolList;
         public LevelData(List<PoolData> datas)
