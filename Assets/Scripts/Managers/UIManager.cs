@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     private void SubscribeEvents()
     {
         CoreGameSignals.Instance.onLevelInitialize += OnLevelInitialized;
-        CoreGameSignals.Instance.onLevelSuccessfull += OnLevelSuccesful;
+        CoreGameSignals.Instance.onLevelSuccessful += OnLevelSuccesful;
         CoreGameSignals.Instance.onLevelFailed += OnLevelFailed;
         CoreGameSignals.Instance.onReset += OnReset;
     }
@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     private void UnSubscribeEvents()
     {
         CoreGameSignals.Instance.onLevelInitialize -= OnLevelInitialized;
-        CoreGameSignals.Instance.onLevelSuccessfull -= OnLevelSuccesful;
+        CoreGameSignals.Instance.onLevelSuccessful -= OnLevelSuccesful;
         CoreGameSignals.Instance.onLevelFailed -= OnLevelFailed;
         CoreGameSignals.Instance.onReset -= OnReset;
     }

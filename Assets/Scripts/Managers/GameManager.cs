@@ -1,6 +1,6 @@
-using Sirenix.OdinInspector;
-using UnityEngine;
 using Enums;
+using Signals;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         UnsubscribeEvents();
     }
 
-    [Button("Change State")]
+    //[Button("Change State")]
     private void OnChangeGameState(GameStates state)
     {
         states = state;

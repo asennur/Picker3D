@@ -32,6 +32,7 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - Assembly-CSharp
     - Sirenix.OdinInspector.CompatibilityLayer
+    - Cinemachine
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - PPv2URPConverters
     showAdvancedSettings: 0
