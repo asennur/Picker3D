@@ -33,9 +33,9 @@ MonoBehaviour:
     - Cinemachine
     - Assembly-CSharp
     - Sirenix.OdinInspector.CompatibilityLayer
+    - RuntimeTestAssembly
     - NonConvexCollider
     - NonConvexColliderRuntimeAPI
-    - RuntimeTestAssembly
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - PPv2URPConverters
     - NonConvexEditor

@@ -1,3 +1,5 @@
+using Controllers.Pool;
+using DG.Tweening;
 using Managers;
 using Signals;
 using UnityEngine;
@@ -24,10 +26,21 @@ namespace Controllers.Player
             {
                 CoreGameSignals.Instance.onStageAreaEntered?.Invoke();
                 InputSignals.Instance.onDisableInput?.Invoke();
+                DOVirtual.DelayedCall(3, () =>
+                {
+                    var result = other.transform.parent.GetComponentInChildren<PoolController>()
+                        .TakeStageResult(manager.StageValue);
+                    if (result)
+                    {
+                        CoreGameSignals.Instance.onStageAreaSuccessful?.Invoke(manager.StageValue);
+                        InputSignals.Instance.onEnableInput?.Invoke();
+                    }
+                    else CoreGameSignals.Instance.onLevelFailed?.Invoke();
+                });
             }
         }
 
-        public void OnReset()
+        internal void OnReset()
         {
         }
     }
