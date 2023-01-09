@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Data.UnityObject;
 using Data.UnityObjects;
@@ -27,7 +26,7 @@ namespace Controllers.Pool
         #region Private Variables
 
         [ShowInInspector] private PoolData _data;
-        [ShowInInspector] private byte _collectedCount;
+        [ShowInInspector] private byte _collectedCount, _finalCount;
 
         #endregion
 
@@ -41,7 +40,7 @@ namespace Controllers.Pool
         private PoolData GetPoolData()
         {
             return Resources.Load<CD_Level>("Data/CD_Level")
-                .Levels[(int)CoreGameSignals.Instance.onGetLevelValue?.Invoke()]
+                .Levels[(int) CoreGameSignals.Instance.onGetLevelValue?.Invoke()]
                 .PoolList[stageID];
         }
 
@@ -67,7 +66,8 @@ namespace Controllers.Pool
 
         private void OnChangeThePoolColor(int stageValue)
         {
-            renderer.sharedMaterial.DOColor(new Color(0.1607842f, 0.6039216f, 0.1766218f), 1).SetEase(Ease.Linear);
+            if (stageValue == stageID)
+                renderer.material.DOColor(new Color(0.1960784f, 0.0941176f, 0.5607843f), 1).SetEase(Ease.Linear);
         }
 
         private void UnSubscribeEvents()
@@ -106,6 +106,8 @@ namespace Controllers.Pool
             if (!other.CompareTag("Collectable")) return;
             IncreaseCollectedCount();
             SetCollectedCountToText();
+            _finalCount++;
+            SliderController.Instance.UpdateSlider(_finalCount);
         }
 
         private void SetCollectedCountToText()

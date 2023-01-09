@@ -632,7 +632,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46e3ab2b60babb349a09d31b2fb85ea7, type: 2}
+  - {fileID: 2100000, guid: dffac021f445541edaca7243ffc71ad8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -957,7 +957,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f858c6141aeacb4298d584ab305b8f2, type: 2}
+  - {fileID: 2100000, guid: d3e8c4b815ab7489bab895d37eecedde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2346,7 +2346,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46e3ab2b60babb349a09d31b2fb85ea7, type: 2}
+  - {fileID: 2100000, guid: dffac021f445541edaca7243ffc71ad8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2647,6 +2647,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8a25fef6e124142a853e3fd9a28149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tweens:
+  - {fileID: 9184225053601131155}
+  - {fileID: 4412717554545556511}
+  - {fileID: 2519405734463406150}
+  poolText: {fileID: 1819977566778375030}
+  stageID: 0
+  renderer: {fileID: 9184225053601131157}
 --- !u!1 &5942088677032628728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,7 +2863,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46e3ab2b60babb349a09d31b2fb85ea7, type: 2}
+  - {fileID: 2100000, guid: dffac021f445541edaca7243ffc71ad8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3296,7 +3303,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46e3ab2b60babb349a09d31b2fb85ea7, type: 2}
+  - {fileID: 2100000, guid: dffac021f445541edaca7243ffc71ad8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5191,7 +5198,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f858c6141aeacb4298d584ab305b8f2, type: 2}
+  - {fileID: 2100000, guid: d3e8c4b815ab7489bab895d37eecedde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5773,8 +5780,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9184225053601131153}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 100.6}
-  m_LocalScale: {x: 15.569968, y: 1, z: 12.289642}
+  m_LocalPosition: {x: 0, y: -4, z: 101.06}
+  m_LocalScale: {x: 15.569968, y: 1, z: 13.860762}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8939046485913735093}

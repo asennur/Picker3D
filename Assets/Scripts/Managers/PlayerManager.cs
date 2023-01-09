@@ -1,6 +1,6 @@
+using Commands.Player;
 using Controllers.Player;
 using Data.UnityObject;
-using Data.UnityObjects;
 using Data.ValueObjects;
 using Keys;
 using Signals;
@@ -16,6 +16,8 @@ namespace Managers
         #region Public Variables
 
         public byte StageValue = 0;
+
+        internal ForceBallsToPoolCommand ForceCommand;
 
         #endregion
 
@@ -39,6 +41,12 @@ namespace Managers
         {
             _data = GetPlayerData();
             SendDataToControllers();
+            Init();
+        }
+
+        private void Init()
+        {
+            ForceCommand = new ForceBallsToPoolCommand(this, _data.MovementData);
         }
 
         private PlayerData GetPlayerData()
@@ -66,9 +74,12 @@ namespace Managers
             CoreGameSignals.Instance.onLevelSuccessful += OnLevelSuccessful;
             CoreGameSignals.Instance.onLevelFailed += OnLevelFailed;
             CoreGameSignals.Instance.onStageAreaEntered += OnStageAreaEntered;
+            CoreGameSignals.Instance.onFinishAreaEntered += OnFinishAreaEntered;
             CoreGameSignals.Instance.onStageAreaSuccessful += OnStageAreaSuccessful;
+            CoreGameSignals.Instance.onMiniGameEntered += OnMiniGameEntered;
             CoreGameSignals.Instance.onReset += OnReset;
         }
+        
 
         private void UnSubscribeEvents()
         {
@@ -79,7 +90,9 @@ namespace Managers
             CoreGameSignals.Instance.onLevelSuccessful -= OnLevelSuccessful;
             CoreGameSignals.Instance.onLevelFailed -= OnLevelFailed;
             CoreGameSignals.Instance.onStageAreaEntered -= OnStageAreaEntered;
+            CoreGameSignals.Instance.onFinishAreaEntered -= OnFinishAreaEntered;
             CoreGameSignals.Instance.onStageAreaSuccessful -= OnStageAreaSuccessful;
+            CoreGameSignals.Instance.onMiniGameEntered -= OnMiniGameEntered;
             CoreGameSignals.Instance.onReset -= OnReset;
         }
 
@@ -127,6 +140,14 @@ namespace Managers
         {
             StageValue = (byte)++value;
             movementController.IsReadyToPlay(true);
+            meshController.ScaleUpPlayer();
+            meshController.ShowUpText();
+            meshController.PlayConfetiParticle();
+        }
+
+        private void OnFinishAreaEntered()
+        {
+            movementController.IsReadyToPlay(false);
         }
 
         private void OnReset()
@@ -135,6 +156,10 @@ namespace Managers
             movementController.OnReset();
             meshController.OnReset();
             physicsController.OnReset();
+        }
+        private void OnMiniGameEntered()
+        {
+            movementController.IsInMiniGame(true);
         }
     }
 }
