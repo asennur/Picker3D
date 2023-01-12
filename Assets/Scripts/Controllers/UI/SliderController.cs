@@ -1,29 +1,17 @@
 using Extensions;
+using Signals;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderController : MonoSingleton<SliderController>
+public class SliderController : MonoBehaviour
 {
-    public float totalBall;
     public Slider _sliderValue;
-    public float finalScore;
      private void Awake()
     {
         _sliderValue = transform.GetChild(0).GetComponent<Slider>();
     }
-
-    private void Start()
-    {
-        totalBall = GameObject.FindGameObjectsWithTag("Collectable").Length;
-    }
-
     private void Update()
     {
-        finalScore = _sliderValue.value;
-    }
-
-    public void UpdateSlider(float collectedBall)
-    {
-        _sliderValue.value = collectedBall / totalBall;
+       _sliderValue.value = (float) UISignals.Instance.onGetScore?.Invoke();
     }
 }

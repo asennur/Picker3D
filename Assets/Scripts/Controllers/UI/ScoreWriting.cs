@@ -1,3 +1,4 @@
+using Signals;
 using TMPro;
 using UnityEngine;
 
@@ -6,8 +7,7 @@ public class ScoreWriting : MonoBehaviour
     private float _score;
     private void OnEnable()
     {
-        _score = SliderController.Instance.finalScore;
-        Debug.Log( $"Score: {_score}");
+        _score = (float) UISignals.Instance.onGetScore?.Invoke();
         WriteScore();
     }
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Xml.Schema;
 using Data.UnityObject;
 using Data.UnityObjects;
 using Data.ValueObjects;
@@ -25,6 +26,7 @@ namespace Controllers.Pool
 
         #region Private Variables
 
+        private float totalBall;
         [ShowInInspector] private PoolData _data;
         [ShowInInspector] private byte _collectedCount, _finalCount;
 
@@ -35,6 +37,7 @@ namespace Controllers.Pool
         private void Awake()
         {
             _data = GetPoolData();
+            totalBall = GameObject.FindGameObjectsWithTag("Collectable").Length;
         }
 
         private PoolData GetPoolData()
@@ -53,6 +56,12 @@ namespace Controllers.Pool
         {
             CoreGameSignals.Instance.onStageAreaSuccessful += OnActivateTweens;
             CoreGameSignals.Instance.onStageAreaSuccessful += OnChangeThePoolColor;
+            UISignals.Instance.onGetScore += OnGetValue;
+        }
+
+        private float OnGetValue()
+        {
+            return _finalCount / totalBall;
         }
 
         private void OnActivateTweens(int stageValue)
@@ -74,6 +83,7 @@ namespace Controllers.Pool
         {
             CoreGameSignals.Instance.onStageAreaSuccessful -= OnActivateTweens;
             CoreGameSignals.Instance.onStageAreaSuccessful -= OnChangeThePoolColor;
+            UISignals.Instance.onGetScore -= OnGetValue;
         }
 
         private void OnDisable()
@@ -92,7 +102,6 @@ namespace Controllers.Pool
             {
                 return _collectedCount >= _data.RequiredObjectCount;
             }
-
             return false;
         }
 
@@ -107,7 +116,7 @@ namespace Controllers.Pool
             IncreaseCollectedCount();
             SetCollectedCountToText();
             _finalCount++;
-            SliderController.Instance.UpdateSlider(_finalCount);
+            
         }
 
         private void SetCollectedCountToText()

@@ -91,8 +91,8 @@ namespace Controllers.Player
         {
             transform.position = Vector3.Lerp(transform.position,
                 new Vector3(transform.position.x, transform.position.y,
-                    firstTransform.z + (SliderController.Instance.finalScore * 250 )), 4*Time.deltaTime);
-            finalPos = new Vector3(transform.position.x, transform.position.y, firstTransform.z + SliderController.Instance.finalScore * 250);
+                    firstTransform.z + ((float) UISignals.Instance.onGetScore?.Invoke()* 250 )), 4*Time.deltaTime);
+            finalPos = new Vector3(transform.position.x, transform.position.y, firstTransform.z + (float) UISignals.Instance.onGetScore?.Invoke() * 250);
             if (Vector3.Distance(finalPos, transform.position) < 1)
             {
                 _isInMiniGame = false;

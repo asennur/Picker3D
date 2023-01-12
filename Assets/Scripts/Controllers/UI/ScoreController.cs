@@ -1,13 +1,18 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Sirenix;
+using Sirenix.OdinInspector;
 
 public class ScoreController : MonoBehaviour
 {
-    private void Awake()
+    [SerializeField] private List<TextMeshPro> scores = new List<TextMeshPro>();
+    [Button]
+    private void ScoreValues()
     {
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < scores.Count; i++)
         {
-            transform.GetChild(i).GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = ((i+1) * 10).ToString();
+            scores[i].text = ((i+1) * 10).ToString();
         }
     }
 }
